@@ -37,80 +37,83 @@
         <article>
           <h1>Exercise 1</h1>
           <ul>
-            <li>Modify process-info.php</li>
-            <li>Use filter_var to filter the text entered into the email field</li>
-            <li>Run your program again and see what happens!</p>       
+            <li>Copy and paste the <strong><a href="https://raw.githubusercontent.com/margaretmay/php-101/master/class3-files/classwork/form.php">following code</a></strong> into a file called form.php
+			</li>
+            <li>Open form.php in a browser and press the <strong>Submit</strong> button and watch what happens.</li>       
           <button class="btn" onclick="showSolution(1)">See Solution</li>
           
           </button>
           <br><br>
           <div id="solution1" style="display:none;">
-            <script src="https://gist.github.com/feministy/5a9e97b676a787685c58.js"></script>
+            <a href="classwork/form.php">Click here to run my answer!</a>
           </div>
         </article>
-
-        <article>
-          <h1>Exercise 2</h1>
-          <p> Update process-info.php to also print out both Web Site and Comments.</p>
+		
+		<article>
+          <h1>Exercise 2: Let's Fix It!</h1>
+          <p>Create a new file called <a href="https://raw.githubusercontent.com/margaretmay/php-101/master/class3-files/classwork/process-info-1.php">process-info-1.php</a> and place it in the same folder as form-1.php. Update the form action in our form to process-info-1.php. Rename form.php to form-1.php. Press the Submit button again.</p>
          
           <button class="btn" onclick="showSolution(2)">See Solution</button>
           <div id="solution2" style="display:none;">
-            <script src="https://gist.github.com/feministy/297211d8b06d12fd47f7.js"></script>
+            <a href="classwork/form-1.php">Click here to run my answer!</a>
           </div>
         </article>
-
+		
         <article>
           <h1>Exercise 3</h1>
-          <p> Expose the security risk. To do this:</p>
-      <ul>
-           <li>In the comments field, enter:
-<a href="nastysite">A Nasty Site</a>
-           <li>Click the Submit button.
-           <li>Notice what happens.
-           <li>Try changing the link tag and see what happens.
-           <li>Notice that we now have a link on our second/result
-          </ul>
-          <button class="btn" onclick="showSolution(3)">See Solution</button>
-          <div id="solution3" style="display:none;">
-            <script src="https://gist.github.com/feministy/21249306f1ce64d31730.js"></script>
-          </div>
+			<ol>
+				<li>Go back to your form and enter Maggie May for Full Name and maggiemay@gmail.com for Email and click the Submit button.</li>
+				<li>Copy the text in the URL field of your browser.</li>
+				<li>Open a new browser tab.</li>
+				<li>Paste the text you copied into the URL of this new browser tab and hit enter.</li>
+				<li>In the new tab, change the full name and email to your name and email address and hit enter.</li>
+				<li>Describe what happens. What happens to the at symbol @ in the URL of the email address field?</li>
+			</ol>
         </article>
 
         <article>
           <h1>Exercise 4</h1>
-          <p>Use htmlspecialchars to protect ourselves from nasty input in the Comments text area. Run your program and see what happens. Hint: use ENT_QUOTES flag</p>
-         
-          <button class="btn" onclick="showSolution(4)">See Solution</button>
-          <div id="solution4" style="display:none;">
-            <script src="https://gist.github.com/feministy/eefc7231dcb06c63a444.js"></script>
+			<ol>
+				<li>Rename form-1.php to form-2.php.</li>
+				<li>Rename process-info-1.php to process-info-2.php.</li>
+				<li>In form-2.php, update the form action to call out to process-info-2.php.</li>
+				<li>In process-info-2.php, add code to print out both Web Site and Comments.</li>
+			</ol>
+          <button class="btn" onclick="showSolution(3)">See Solution</button>
+          <div id="solution3" style="display:none;">
+            <a href="classwork/form-2.php">Click here to run my answer!</a>
           </div>
         </article>
 
         <article>
           <h1>Exercise 5</h1>
-          <p>Create an array of your friends and their favorite foods. Echo a few values onto your screen.</p>
-          
-          <button class="btn" onclick="showSolution(5)">See Solution</button>
-          <div id="solution5" style="display:none;">
-            <script src="https://gist.github.com/feministy/7e33aa46207ffc2c3bc7.js"></script>
+          <p> Expose the security risk. To do this:</p>
+			<ul>
+			   <li>In the comments field, enter:
+	<a href="nastysite">A Nasty Site</a>
+			   <li>Click the Submit button.
+			   <li>Notice what happens.
+			   <li>Try changing the link tag and see what happens.
+			   <li>Notice that we now have a link on our second/result
+          </ul>
+        </article>
+
+        <article>
+		  <h1>Exercise 6</h1>
+			<ol>
+				<li>Rename form-2.php to form-3.php.</li>
+				<li>Rename process-info-2.php to process-info-3.php.</li>
+				<li>In form-3.php, update the form action to call out to process-info-3.php.</li>
+				<li>In process-info-3.php, make a call to htmlspecialchars to protect ourselves from nasty input in the Comments text area. Run your program and see what happens. Hint: use the ENT_QUOTES flag.</li>
+			</ol>
+         
+          <button class="btn" onclick="showSolution(4)">See Solution</button>
+          <div id="solution4" style="display:none;">
+            <a href="classwork/form-3.php">Click here to run my answer!</a>
           </div>
         </article>
+		
       </section>
-
-      
-      
-      <article>
-          <h1>Exercise 6</h1>
-          <p>Take your array of friends and write a foreach loop that echos "My friend NAME likes FOOD."</p>
-          
-          <button class="btn" onclick="showSolution(6)">See Solution</button>
-          <div id="solution6" style="display:none;">
-            <script src="https://gist.github.com/feministy/7e33aa46207ffc2c3bc7.js"></script>
-          </div>
-        </article>
-      </section>
-
-
 
         <!-- FOOTER -->
       <footer>
