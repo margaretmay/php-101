@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>PHP 101</h1>
+					<h3>By Margaret May</h3>
+					<p>
+						<small>Organized by Elena Levine</small>
+					</p>
+					<p>
+						<small>Partially based on a GDI class created by Sylvia Richardson</small>
+					</p>
+				</section>
+				
+				<!-- Welcome-->
+				<section id="welcome">
+					<h3>Welcome!</h3>
+					<div class = "left-align">
+						<p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+						<p class ="green">Some "rules"</p>
+						<ul>
+							<li>We are here for you!</li>
+							<li>Every question is important.</li>
+							<li>Help each other.</li>
+							<li>Have fun.</li>
+						</ul>
+					</div>
+					<small>https://github.com/Roenok/gdi-intro-php-mysql</small>					
+				</section>
+				
+				<section>
+					<h3>What we will cover today</h3>
+					<ul>
+						<li>Go over homework</li>
+						<li>Refresher</li>
+						<li>Forms!!</li>
+					</ul>
+				</section>
+				
+				<section><h3>----- Refresher!! -----</h3></section>
+				
+				<!-- Ask the students these questions --> 
+				<section class="fragments">
+					<h3>What We Have Learned. PHP...</h3>
+					<ul>
+						<li>is a compiled or interpreted? <span class="fragment"><b><i>interpreted</b></i></span></li>
+						<li>is server-side or client-side? <span class="fragment"><b><i>server-side</i></b></span></li>
+						<li>has database support (true || false)? <span class="fragment"><b><i>true</i></b></span></li>
+						<li>lets you webpages that can dynamically respond to user input (true || false) <span class="fragment"><b><i>true</i></b></span></li>
+						<li> manipulate things in the browser without going back to the server  (true || false)  <span class="fragment"><b><i>false</i></b></span> 
+						<li>allows you to write DRY code which stands for <span class="fragment"><b><i>Don't Repeat Yourself</i></b></span></li>
+					</ul>
+				</section>
+				
+				<!-- Another refresher slide or two here -- have people call out what they have learned 
+				
+				<section>
+				
+				</section>
+				
+				
+				
+				<section>
+					<h3>We Have Also Learned About...</h3>
+					<ul>
+						<li>Syntax</li>
+						<li>Control Flow</li>
+					</ul>
+				</section>
+				
+				-->
+				
+				<section><h3>----- Forms!! -----</h3></section>
+				
+		        <section>
+					<h3>Let's make a form!</h3>
+					<pre><code>
+<form id="info-form" action="process-info-1.php">
+	<label for="fullname">Full Name * :</label><br>
+	<input type="text" id="fullname" name="fullname"/><br><br>
+
+	<label for="email">Email * :</label><br>
+	<input type="text" id="email" name="email"/><br><br>
+	
+	<input type="submit" value="Submit"/>
+</form> 
+					</code></pre>
+				</section>
+				
+				<section>
+					<h3>Let's break it down: form tag</h3>
+					<pre><code>
+<form id="info-form" action="process-info-1.php">
+	...
+	...
+	...
+	...
+	...
+</form> 
+					</code></pre>
+					<p><small>http://www.w3schools.com/tags/tag_form.asp</small></p>
+				</section>
+				
+				<section>
+					<h3>Adding an: input tag</h3>
+					<pre><code>
+<form id="info-form" action="process-info-1.php">
+	...
+	...
+	...
+	...
+	<input type="submit" value="Submit"/>
+</form> 
+					</code></pre>
+					<img src="images/submit-button.png"/>
+					<p><small>http://www.w3schools.com/html/html_forms.asp</small></p>
+				</section>
+				
+				<section>
+					<h3>Let's break it down: label tags</h3>
+					<pre><code>
+		...
+		...
+		<label for="fullname">Full Name * :</label><br/>
+		...
+
+		<label for="email">Email * :</label><br/>
+		...
+		...
+					</code></pre>
+					<img src="images/label-tags.png"/>
+					<p><small>http://www.w3schools.com/tags/tag_label.asp</small></p>
+				</section>
+				
+				<section>
+					<h3>Let's break it down: text input fields</h3>
+					<pre><code>
+	...
+	<input type="text" id="fullname" name="fullname"/><br><br>
+
+	...
+	<input type="text" id="email" name="email"/><br><br>
+
+	...
+</form> 
+					</code></pre>
+					<img src="images/text-input-fields.png"/>
+					<p><small>http://www.w3schools.com/tags/tag_input.asp</small></p>
+				</section>
+				
+				<section>
+					<h3>Putting it all together!</h3>
+					<pre><code>
+<form id="info-form" action="process-info-1.php">
+	<label for="fullname">Full Name * :</label><br>
+	<input type="text" id="fullname" name="fullname"/><br><br>
+
+	<label for="email">Email * :</label><br>
+	<input type="text" id="email" name="email"/><br><br>
+	
+	<input type="submit" value="Submit"/>
+</form> 
+					</code></pre>
+					<img src="images/form-1.png"/>
+				</section>
+				
+				<section>
+					<h3>Exercise!</h3>
+					<p>Copy and paste the following code into a file called <strong>form-1.php</strong>.</p>
+					<pre><code>
+<form id="info-form" action="process-info-1.php">
+	<label for="fullname">Full Name * :</label><br>
+	<input type="text" id="fullname" name="fullname"/><br><br>
+
+	<label for="email">Email * :</label><br>
+	<input type="text" id="email" name="email"/><br><br>
+	
+	<input type="submit" value="Submit"/>
+</form> 
+					</code></pre>
+					<p>Open form-1.php in a browser and press the <strong>Submit</strong> button and watch what happens.</p>
+					<p><a href="class3-files/classwork/form-1.php">Click here to run my form-1.php!</a></p>
+				</section>
+				
+				<section class="fragments">
+					<h3>What happened when we pressed the <strong>Submit</strong> button?</h3>
+					<p class="fragment">We made a basic HTML form to collect some data, and then sent it to another PHP file. Of course, that file does not exist yet.</p>
+				</section>
+
+				<section>
+					<h3>Exercise: Let's fix it!</h3>
+					<p>Create a new file called process-info-1.php and place it in the same folder as form-1.php. Press the Submit button again.</p>
+					<pre><code>
+						&lt;?php 
+	$fullname = $_GET['fullname']; 
+	$email = $_GET['email']; 
+	
+	echo 'The Full Name you entered was: ' . $fullname;
+	echo 'The Email you entered was: ' . $email;
+						?&gt;
+					</code></pre>
+					<p><a href="class3-files/classwork/form-1.php">Click here to run my answer!</a></p>
+				</section>
+				
+				<section class="fragments">
+					<h3>Yay! No more gigantic error!!</h3>
+					<p>Notice what happened.</p>
+					<ul>
+	
+						<li class="fragment">Our first file called out to our second file when we clicked the Submit button.</li>
+						<li class="fragment">We printed any text we had entered into the various form fields.</li>
+					</ul>
+					<p class="fragment" align="center">You did it! Great job!</p>
+				</section>
+				
+				<section>
+					<h3>Let's break down process-info-1.php</h3>
+					<pre><code>
+						&lt;?php 
+	$fullname = $_GET['fullname']; 
+	$email = $_GET['email']; 
+	...
+						?&gt;
+					</code></pre>
+					<ul>
+						<li>Notice <strong>$_GET</strong></li>
+						<li>$_GET is a <strong><i>superglobal</i></strong></li>
+						<li>$_GET is a variable</li>
+						<li>$_GET is an array</li>
+					</ul>
+					<p><small>http://www.w3schools.com/php/php_superglobals.asp</small></p>
+				</section>
+					
+				<section>
+					<h3>Superglobals...</h3>
+					<ul>
+						<li>accessible regardless of scope</li>
+						<li>are unvalidated/unfiltered</li>
+					</ul>
+					<p><small>http://www.w3schools.com/php/php_superglobals.asp</small></p>
+				</section>
+				
+				<section>
+					<h3>Specifically for $_GET</h3>
+					<ul>
+						<li>When you submit a form, PHP will add each of your text field and text areas into the $_GET variable as key => value pairs</li>
+						<li>Text field <b><i>name attribute</i></b> becomes <b><i>key</i></b></li>
+						<li>Actual <b><i>text the user enters</i></b> becomes <b><i>value</i></b></li>
+					</ul>
+					<code><pre>
+$_GET = [
+	'fullname' => 'what you entered for fullname before clicking submit',
+	'email' => 'what you entered for email before clicking submit',
+]					
+					</pre></code>
+				</section>
+				
+				<section>
+					<h3>List of PHP Superglobal Variables</h3>
+					<ul>
+						<li>$_POST</li>
+						<li>$_GET</li>
+						<li>$_SERVER</li>
+						<li>$_REQUEST</li>
+						<li>$_FILES</li>
+						<li>$_ENV</li>
+						<li>$_COOKIE</li>
+						<li>$_SESSION</li>
+					</ul>
+					<p><small>http://www.w3schools.com/php/php_superglobals.asp</small></p>
+				</section>
+				
+				<section>
+					<h3>Exercise!</h3>
+					<ol>
+						<li>Go back to your form and enter Maggie May for Full Name and maggiemay@gmail.com for Email and click the Submit button.</li>
+						<li>Copy the text in the URL field of your browser.</li>
+						<li>Open a new browser tab.</li>
+						<li>Paste the text you copied into the URL of this new browser tab and hit enter.</li>
+						<li>In the new tab, change the full name and email to your name and email address and hit enter.</li>
+						<li>Describe what happens. What happens to the at symbol @ in the URL of the email address field?</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Adding to our form</h3>
+					<pre><code>
+<form id="info-form" action="process-info-2.php">
+	<label for="fullname">Full Name * :</label><br>
+	<input type="text" id="fullname" name="fullname"/><br><br>
+
+	<label for="email">Email * :</label><br>
+	<input type="text" id="email" name="email"/><br><br>
+	
+	<label for="website">Website:</label><br>
+	<input type="text" id="website" name="website"/><br><br>
+	
+	<label for="comments">Comments:</label><br>
+	&lt;textarea name="comments" rows="5" cols="40"/&gt;<br><br>
+	
+	<input type="submit" value="Submit"/>
+</form> 
+					</code></pre>
+					<p><small>http://www.w3schools.com/tags/tag_textarea.asp</small></p>
+				</section>
+				
+				<section>
+					<h3>Let's break it down: adding a text field and a text area</h3>
+<pre><code>
+	...
+	<label for="email">Website:</label><br>
+	<input type="text" id="website" name="website"/><br><br>
+	
+	<label for="email">Comments:</label><br>
+	<textarea name="comment" rows="5" cols="40"></textarea><br><br>
+	...
+</code></pre>
+				</section>
+				
+				<section>
+					<h3>New Text Field</h3>
+<pre><code>
+	...
+	<label for="email">Website:</label><br>
+	<input type="text" id="website" name="website"/><br><br>
+	...
+</code></pre>
+					<ul>
+						<li class="fragment">Exactly the same as Full Name and Email fields</li>
+						<li class="fragment">Not required to be filled in to submit our form - but notice that there is no code enforcing this</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>And something new: a Text Area</h3>
+<pre><code>
+	<label for="email">Comments:</label><br>
+	<textarea name="comment" rows="5" cols="40"></textarea><br><br>
+</code></pre>
+					<ul>
+						<li class="fragment">Has rows and columns</li>
+						<li class="fragment">Value gets saved in <strong>$comment</strong> variable</li>
+					</ul>
+					<p><small>http://www.w3schools.com/tags/tag_textarea.asp</small></p>
+				</section>
+				
+				<section>
+					<h3>Exercise!</h3>
+					<ol>
+						<li>Rename form-1.php to form-2.php.</li>
+						<li>Rename process-info-1.php to process-info-2.php.</li>
+						<li>In form-2.php, update the form action to call out to process-info-2.php.</li>
+						<li>In process-info-2.php, add code to print out both Web Site and Comments.</li>
+					</ol>
+					<p><a href="class3-files/classwork/form-2.php">Click here to run my answer!</a></p>
+				</section>
+				
+				<section>
+					<h3>Good Job!</h3>
+					<p class="fragment">But we are not done yet....</p>
+				</section>
+	
+				<section class="fragments">
+					<h3>Security!</h3>
+					<p>Can anybody spot any security risks in our program?</p>
+					<p class="fragment">Hint: it has something to do with the fields in our form...</p>
+				</section>
+
+				<section>
+					<h3>Exercise!</h3>
+					<p>Expose the security risk. To do this:</p>
+					<ol>
+						<li>Open/go back to form-2.php.</li>
+						<li>In the comments field, enter: 
+						<pre><code><A HREF ="nastysite">A Nasty Site</A></code></pre>
+						</li>
+						<li>Click the Submit button.</li>
+						<li>Notice what happens.</li>
+						<li>Try changing the link tag and see what happens.</li>
+					</ol>
+					<p>
+					<p class="fragment">Notice that we now have a link on our second/results page.</p>
+				</section>
+	
+				<section>
+					<h3>An Injection Attack</h3>
+					<ul>
+						<li>Where a hacker finds a way to insert code</li>
+						<li>There are different types of Inject Attacks: 
+						<ul>
+							<li>HTML</li>
+							<li>JavaScript</li>
+							<li>SQL</li>
+						</ul>
+					</ul>
+				</section>
+			
+				<section>
+					<h3>SQL Injection</h3>
+					<img src="images/bobby-tables.png"/>
+					<p><small>http://xkcd.com/327/</small></p>
+				</section>
+	
+				<section>
+					<h3>Good news! PHP gives us ways to protect our code!</h3>
+				</section>
+	
+				<section class="fragments">
+					<h3>htmlspecialchars</h3>
+					<ul>
+						<li class="fragment">Let's look at the <a href="http://php.net/manual/en/function.htmlspecialchars.php">PHP manual definition</a></li>
+						<li class="fragment">What does this function do?</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h3>Exercise!</h3>
+					<ol>
+						<li>Rename form-2.php to form-3.php.</li>
+						<li>Rename process-info-2.php to process-info-3.php.</li>
+						<li>In form-3.php, update the form action to call out to process-info-3.php.</li>
+						<li>In process-info-3.php, make a call to htmlspecialchars to protect ourselves from nasty input in the Comments text area. Run your program and see what happens. Hint: use the ENT_QUOTES flag.</li>
+					</ol>
+					<p><a href="class3-files/classwork/form-3.php">Click here to run my answer!</a></p>
+				</section>
+				
+				<section>
+					<h3>Homework</h3>
+					<ol>
+						<li>Split Full Name into 2 fields, First Name and Last Name</li>
+						<li>Make First Name and Last Name required fields</li>
+						<li>Limit the amount of text a user can enter in the Comments field to 100 characters.</li>
+					</ol>
+				</section>
+				
+				<section><h3>------ Bonus Material! ------</h3></section>
+				
+				<section><h3>PHP at the Command Line</h3></section>
+				
+				<section>
+					<h3>Getting Started with the PHP Command Line</h3>
+					<ol>
+						<li>Let's create a directory where scripts like this should go.</li>
+						<li>Locate the directory where XAMPP is installed</li>
+						<li>Find the php folder</li>
+						<li>Create a folder called 'gdi'</li>
+						<li>Using any text editor, create a file called get-html-special-chars-tables.php</li>
+						<li>Write a script that will print out print out the encoding tables used by htmlspecialentities</li>
+					</ol>
+				</section>
+				
+				<section>
+					<h3>Our Finished Script!</h3>
+					<pre><code>
+&lt;?php
+ 
+$table = get_html_translation_table(HTML_ENTITIES, ENT_NOQUOTES, 'WINDOWS-1252'); 
+var_dump($table);
+
+?&gt;
+					</code></pre>
+				</section>
+				
+				<section>
+					<h3>Running our Script!</h3>
+					<ol>
+						<li>Open an XAMPP command shell.</li>
+						<li>Change directories to the XAMPP php directory</li>
+						<li>Type: php get-html-special-chars-tables.php</li>
+					</ol>
+				</section>
+				
+				<section>
+					<h3>Command-line Scripts</h3>
+					<ul>
+						<li>are a very good habit of getting into in order to truly figure out how parts of PHP work</li>
+					</ul>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>Wear a Coat and Hat?</title>
+	</head>
+	<body>
+		<p>
+		<?php
+			// Report all PHP errors
+			error_reporting(-1);
+
+			$temp = 90;
+			echo doTemperatureDecision($temp);
+			
+			function doTemperatureDecision($temperature)
+			{
+				if ($temperature < 0)
+				{
+					return 'Stay inside!';
+				}
+				else
+				{
+					return getPositiveTemperatureInstructions($temperature);
+				}
+			}
+			
+			function getPositiveTemperatureInstructions($temperature)
+			{
+				$instructions = null;
+				if ($temperature < 50)
+				{
+					$instructions = 'Please put on a coat';
+				}
+				if ($temperature < 30)
+				{
+					$instructions .= ' and a hat';
+				}
+				
+				if ($instructions == null)
+				{
+					$instructions = 'Wear whatever you want';
+				}
+				
+				$instructions .= '.';
+				return $instructions;
+			}
+		?>
+		</p>
+	</body>
+</html>
